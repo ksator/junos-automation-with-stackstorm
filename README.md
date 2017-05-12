@@ -6,7 +6,7 @@ StackStorm is event-driven automation:
 - doesnt rely on human input. 
 - react to events.  
 
-Stackstorm has network automation capabilities with the packs napalm and ansible.   
+Stackstorm has network automation capabilities with the stackstorm packs napalm and ansible. So stackstorm can fire napalm or ansible content based on events.    
 
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
 https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (netflix)  
