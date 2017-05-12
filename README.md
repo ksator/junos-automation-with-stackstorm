@@ -1,5 +1,5 @@
 ## about this repo
-How to automate Junos with stackstorm. 
+Junos automation with stackstorm. 
 
 ## about stackstorm
 StackStorm is event-driven automation: 
