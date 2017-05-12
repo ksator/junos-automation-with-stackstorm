@@ -75,7 +75,11 @@ Currently logged in as st2admin
 ```
 
 # integration packs
+
+## integration packs hub
 stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
+
+## list of installed pack
 to get the list of installed pack, run this command: 
 ```
 $ sudo st2 pack list
@@ -101,7 +105,8 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
-pack configuration files are located in /opt/stackstorm/configs/ directory.  
+## pack configuration files
+They are located in /opt/stackstorm/configs/ directory.  
 A pack configuration file is a YAML file which contains pack configuration. It is named with the pack name (\<pack name>.yaml). 
 Some packs require a pack configuration file (napalm) and others do not use a pack configuration file (ansible).  
 ```
@@ -109,19 +114,19 @@ $ ls /opt/stackstorm/configs/
 $
 ```
 
-## StackStorm integration pack for napalm  
+# StackStorm integration pack for napalm  
 
-### about napalm
+## about napalm
 NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library to interact with different network operating systems.  
 napalm source code: https://github.com/napalm-automation/napalm  
 napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
 
-### about this pack
+## about this pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
 All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed for you when you install the pack using st2 pack install.    
 
-### pack installation
+## pack installation
 to get help with the st2 pack command, run this command: 
 ```
 $ sudo st2 pack -h
@@ -362,7 +367,7 @@ to remove this pack, run this command:
 $ sudo st2 pack remove napalm
 ```
 
-### pack usage
+## pack usage
 
 to get the list of available actions with the integration pack napalm, run this command: 
 ```
@@ -471,11 +476,11 @@ $ sudo st2 action get napalm.get_facts
 $ 
 ```
 
-## StackStorm integration pack for ansible 
-### about ansible
-### about this pack
-### pack installation
-### pack usage
+# StackStorm integration pack for ansible 
+## about ansible
+## about this pack
+## pack installation
+## pack usage
 
 # Looking for more Junos automation examples:  
 
