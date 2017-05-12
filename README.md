@@ -4,9 +4,7 @@ How to automate Junos using StackStorm with the integration packs napalm and ans
 # About StackStorm
 
 ## What is StackStorm
-StackStorm is event-driven automation: 
-- it doesnt rely on human input. 
-- it reacts to events.  
+StackStorm is event-driven automation: it reacts to events, it doesnt require an human input.   
 
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
 https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (Netflix)  
