@@ -164,25 +164,27 @@ $ ls /opt/stackstorm/configs/
 $
 ```
 
-# StackStorm integration pack for NAPALM  
+# napalm pack
+
+This is a StackStorm integration pack for NAPALM  
 
 ## About NAPALM
 NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library to interact with different network operating systems.  
 napalm source code: https://github.com/napalm-automation/napalm  
 napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
 
-It is not require to install NAPALM in order to use the ST2 integration pack for NAPALM: 
+It is not require to install NAPALM in order to use the napalm pack (the ST2 integration pack for NAPALM): 
 ```
 $ pip list | grep napalm
 $
 ```
 
-## About this pack
+## About the napalm pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
 All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed for you when you install the pack using st2 pack install.    
 
-## Pack installation
+## napalm pack installation
 to get help with the st2 pack command, run this command: 
 ```
 $ sudo st2 pack -h
