@@ -80,6 +80,7 @@ Currently logged in as st2admin
 
 ## Integration packs hub
 StackStorm exchange: https://exchange.stackstorm.org/  
+StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
 
 ## List of installed packs
 to get the list of installed pack, run the below command. So this is the list of packs installed by default: 
