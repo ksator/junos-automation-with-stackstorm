@@ -66,3 +66,29 @@ ksator
 $ st2 whoami 
 Currently logged in as st2admin
 ```
+
+
+## Looking for more Junos automation examples:  
+
+Junos automation with Network Infrastructure as Code (git, gitlab, gitlabCI, IaC, CI/CD, pipeline, ansible)  
+https://gitlab.com/ksator/network-infrastructure-as-code  
+
+How to automate Openconfig configuration on Juniper devices (openconfig, yang, netconf, pyang, pyangbind, ansible,  pyez)     
+https://github.com/ksator/openconfig-demo-with-juniper-devices  
+
+How to automate verifications on Junos devices (jsnapy)  
+https://github.com/ksator/junos-verifications-automation-with-jsnapy  
+
+How to delegate junos automation tasks chatting to a bot with slack   
+https://github.com/ksator/junos-automation-with-chatops-in-ams  
+
+How to automate junos with ansible  
+https://github.com/ksator/ansible-training-for-junos-automation  
+
+How to automate junos with python (pyez, ncclient, napalm)  
+https://github.com/ksator/python-training-for-network-engineers  
+
+How to orchestrate your Junos virtual machines with Vagrant (vagrant, virtual box, ansible, vsrx, vqfx)  
+https://github.com/ksator/vagrant-with-junos  
+
+
