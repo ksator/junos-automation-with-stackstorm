@@ -54,7 +54,7 @@ Thanks for installing StackStorm! Come visit us in our Slack Channel
 and tell us how it's going. We'd love to hear from you!
 ```
 
-## Verify: 
+## Verify the installation: 
 ```
 $ st2 --version
 st2 2.2.1
