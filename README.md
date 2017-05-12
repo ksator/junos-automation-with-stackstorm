@@ -1,39 +1,39 @@
-# about this repo
+# About this repo
 How to automate Junos using stackstorm with the integration packs NAPALM and Ansible.  
 
-# about stackstorm
-## what is stackstorm
+# About stackstorm
+## What is stackstorm
 StackStorm is event-driven automation: 
 - it doesnt rely on human input. 
 - it reacts to events.  
 
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
-https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (netflix)  
+https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (Netflix)  
 
-## stackstorm documentation: 
+## Stackstorm documentation 
 
-stackstorm documentation: https://docs.stackstorm.com/index.html  
-stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
-github: https://github.com/StackStorm  
-slack team: https://stackstorm-community.slack.com  
+Stackstorm documentation: https://docs.stackstorm.com/index.html  
+Stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
+Github: https://github.com/StackStorm  
+Slack team: https://stackstorm-community.slack.com  
 
-## Junos automation with stackstorm
-Stackstorm has network automation capabilities with the stackstorm intergration packs napalm and ansible. So stackstorm can fire napalm or ansible content based on events (and Junos can be automated with napalm and ansible).     
+## Junos automation with stackstorm 
+Stackstorm has network automation capabilities with the stackstorm intergration packs NAPALM and Ansible. So stackstorm can fire NAPALM or Ansible content based on events (and Junos can be automated with NAPALM and Ansible).     
 You need to enable Netconf on the Junos devices:
 ```
 set system services netconf ssh
 commit
 ```
 
-# stackstorm installation: 
+# Stackstorm installation 
 
-## all-in-one quick installation: 
+## All-in-one quick installation 
 To quickly install ST2 on ubuntu (single-box deployment for demo), run these commands: 
 ```
 sudo apt-get install curl
 curl -sSL https://stackstorm.com/packages/install.sh | bash -s -- --user=st2admin --password=Ch@ngeMe
 ```
-The installation takes about 12 minutes.  
+The installation takes about 10 minutes.  
 Once it completes successfully, you will see the following output:
 ```
 ########################################################
@@ -74,12 +74,12 @@ $ st2 whoami
 Currently logged in as st2admin
 ```
 
-# integration packs
+# Stackstorm integration packs
 
-## integration packs hub
-stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
+## Integration packs hub
+stackstorm exchange: https://exchange.stackstorm.org/  
 
-## list of installed pack
+## List of installed packs
 to get the list of installed pack, run this command: 
 ```
 $ sudo st2 pack list
@@ -105,7 +105,7 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
-## pack configuration files
+## Pack configuration files
 They are located in /opt/stackstorm/configs/ directory.  
 A pack configuration file is a YAML file which contains pack configuration. It is named with the pack name (\<pack name>.yaml). 
 Some packs require a pack configuration file (napalm) and others do not use a pack configuration file (ansible).  
@@ -114,19 +114,19 @@ $ ls /opt/stackstorm/configs/
 $
 ```
 
-# StackStorm integration pack for napalm  
+# StackStorm integration pack for NAPALM  
 
-## about napalm
+## About NAPALM
 NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library to interact with different network operating systems.  
 napalm source code: https://github.com/napalm-automation/napalm  
 napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
 
-## about this pack
+## About this pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
 All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed for you when you install the pack using st2 pack install.    
 
-## pack installation
+## Pack installation
 to get help with the st2 pack command, run this command: 
 ```
 $ sudo st2 pack -h
@@ -367,9 +367,9 @@ to remove this pack, run this command:
 $ sudo st2 pack remove napalm
 ```
 
-## pack usage
+## Pack usage
 
-to get the list of available actions with the integration pack napalm, run this command: 
+To get the list of available actions with the integration pack napalm, run this command: 
 ```
 $ sudo st2 action list -p napalm
 +--------------------------------------+--------+----------------------------------------------------------+
@@ -477,10 +477,10 @@ $
 ```
 
 # StackStorm integration pack for ansible 
-## about ansible
-## about this pack
-## pack installation
-## pack usage
+## About Ansible
+## About this pack
+## Pack installation
+## Pack usage
 
 # Looking for more Junos automation examples:  
 
