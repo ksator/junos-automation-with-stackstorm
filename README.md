@@ -13,7 +13,10 @@ https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-
 
 
 ## stackstorm documentation: 
-https://docs.stackstorm.com/index.html
+
+stackstorm documentation: https://docs.stackstorm.com/index.html  
+stackstorm exchange (integration packs): https://exchange.stackstorm.org/
+github: https://github.com/StackStorm
 
 ## slack: 
 https://stackstorm-community.slack.com
