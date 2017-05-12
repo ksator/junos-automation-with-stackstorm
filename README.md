@@ -393,8 +393,8 @@ devices:
   driver: junos
   credentials: core
 ```
-$ more /etc/hosts
 ```
+$ more /etc/hosts
 172.30.179.95   ex4300-9
 172.30.179.74   ex4300-18    
 172.30.179.73   ex4300-17    
@@ -517,7 +517,173 @@ $ sudo st2 action get napalm.get_facts
 +-------------+--------------------------------------------------------------+
 $ 
 ```
-
+```
+$ sudo st2 run napalm.get_facts hostname=ex4300-17
+....
+id: 5915fa85a374d80940a8c67f
+status: succeeded
+parameters: 
+  hostname: ex4300-17
+result: 
+  exit_code: 0
+  result:
+    raw:
+      fqdn: ex4300-17.poc-nl.jnpr.net
+      hostname: ex4300-17
+      interface_list:
+      - ge-0/0/0
+      - pfe-0/0/0
+      - pfh-0/0/0
+      - ge-0/0/1
+      - ge-0/0/2
+      - ge-0/0/3
+      - ge-0/0/4
+      - ge-0/0/5
+      - ge-0/0/6
+      - ge-0/0/7
+      - ge-0/0/8
+      - ge-0/0/9
+      - ge-0/0/10
+      - ge-0/0/11
+      - ge-0/0/12
+      - ge-0/0/13
+      - ge-0/0/14
+      - ge-0/0/15
+      - ge-0/0/16
+      - ge-0/0/17
+      - ge-0/0/18
+      - ge-0/0/19
+      - ge-0/0/20
+      - ge-0/0/21
+      - ge-0/0/22
+      - ge-0/0/23
+      - .local.
+      - bme0
+      - dsc
+      - gre
+      - ipip
+      - irb
+      - jsrv
+      - lo0
+      - lsi
+      - me0
+      - mtun
+      - pimd
+      - pime
+      - tap
+      - vme
+      model: EX4300-24T
+      os_version: 15.1R5.5
+      serial_number: PG3713430170
+      uptime: 11147520
+      vendor: Juniper
+  stderr: ''
+  stdout: ''
+$
+```
+```
+$ sudo st2 execution list
++----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
+| id                         | action.ref       | context.user | status                   | start_timestamp          | end_timestamp            |
++----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
+|   5914bf44a374d832ad20b6cc | core.local       | st2admin     | succeeded (1s elapsed)   | Thu, 11 May 2017         | Thu, 11 May 2017         |
+|                            |                  |              |                          | 19:45:08 UTC             | 19:45:09 UTC             |
+|   5914bf47a374d832ad20b6cf | core.remote      | st2admin     | succeeded (2s elapsed)   | Thu, 11 May 2017         | Thu, 11 May 2017         |
+|                            |                  |              |                          | 19:45:11 UTC             | 19:45:13 UTC             |
+| + 5914bf4aa374d832ad20b6d2 | packs.install    | st2admin     | succeeded (18s elapsed)  | Thu, 11 May 2017         | Thu, 11 May 2017         |
+|                            |                  |              |                          | 19:45:14 UTC             | 19:45:32 UTC             |
+| + 5915cc87a374d80940a8c63a | packs.uninstall  | st2admin     | succeeded (3s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 14:53:59 UTC             | 14:54:02 UTC             |
+| + 5915ce3ca374d80940a8c63d | packs.install    | st2admin     | succeeded (121s elapsed) | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 15:01:16 UTC             | 15:03:17 UTC             |
+|   5915f12ea374d80940a8c65e | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 17:30:22 UTC             | 17:30:23 UTC             |
+|   5915f137a374d80940a8c661 | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 17:30:31 UTC             | 17:30:32 UTC             |
+|   5915f665a374d80940a8c664 | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 17:52:37 UTC             | 17:52:38 UTC             |
+|   5915f865a374d80940a8c667 | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:01:09 UTC             | 18:01:10 UTC             |
+|   5915f88ba374d80940a8c66a | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:01:47 UTC             | 18:01:53 UTC             |
+|   5915f8eda374d80940a8c66d | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:03:25 UTC             | 18:03:31 UTC             |
+|   5915f94fa374d80940a8c670 | napalm.get_facts | st2admin     | failed (3s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:05:03 UTC             | 18:05:06 UTC             |
+|   5915f9a4a374d80940a8c679 | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:06:28 UTC             | 18:06:34 UTC             |
+|   5915f9bda374d80940a8c67c | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:06:53 UTC             | 18:06:59 UTC             |
+|   5915fa85a374d80940a8c67f | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:10:13 UTC             | 18:10:19 UTC             |
+|   5915fbb6a374d80940a8c682 | napalm.get_facts | st2admin     | succeeded (7s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
+|                            |                  |              |                          | 18:15:18 UTC             | 18:15:25 UTC             |
++----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
+$
+```
+```
+$ sudo st2 execution get 5915fa85a374d80940a8c67f
+id: 5915fa85a374d80940a8c67f
+status: succeeded (6s elapsed)
+parameters: 
+  hostname: ex4300-17
+result: 
+  exit_code: 0
+  result:
+    raw:
+      fqdn: ex4300-17.poc-nl.jnpr.net
+      hostname: ex4300-17
+      interface_list:
+      - ge-0/0/0
+      - pfe-0/0/0
+      - pfh-0/0/0
+      - ge-0/0/1
+      - ge-0/0/2
+      - ge-0/0/3
+      - ge-0/0/4
+      - ge-0/0/5
+      - ge-0/0/6
+      - ge-0/0/7
+      - ge-0/0/8
+      - ge-0/0/9
+      - ge-0/0/10
+      - ge-0/0/11
+      - ge-0/0/12
+      - ge-0/0/13
+      - ge-0/0/14
+      - ge-0/0/15
+      - ge-0/0/16
+      - ge-0/0/17
+      - ge-0/0/18
+      - ge-0/0/19
+      - ge-0/0/20
+      - ge-0/0/21
+      - ge-0/0/22
+      - ge-0/0/23
+      - .local.
+      - bme0
+      - dsc
+      - gre
+      - ipip
+      - irb
+      - jsrv
+      - lo0
+      - lsi
+      - me0
+      - mtun
+      - pimd
+      - pime
+      - tap
+      - vme
+      model: EX4300-24T
+      os_version: 15.1R5.5
+      serial_number: PG3713430170
+      uptime: 11147520
+      vendor: Juniper
+  stderr: ''
+  stdout: ''
+$
+```
 # StackStorm integration pack for ansible 
 ## About Ansible
 ## About this pack
