@@ -98,8 +98,9 @@ chatops  core  default  linux  packs  st2
 
 ## StackStorm integration pack for napalm  
 https://github.com/StackStorm-Exchange/stackstorm-napalm  
-StackStorm pack for working with network devices using the NAPALM python library  
+StackStorm pack for working with network devices using the NAPALM python library.  
 All Python dependencies are included in requirements.txt. These will be installed for you when you install the pack using st2 pack install.    
+to get help with the st2 pack command, run this command: 
 ```
 $ sudo st2 pack -h
 ```
@@ -195,12 +196,13 @@ sudo st2 pack install napalm
 sudo st2 pack get napalm
 ```
 
-Packs are placed under /opt/stackstorm/packs directory: 
+Packs are placed under the directory /opt/stackstorm/packs: 
 ```
 ls /opt/stackstorm/packs/
 chatops  core  default  linux  napalm  packs  st2
 $
 ```
+the repo https://github.com/StackStorm-Exchange/stackstorm-napalm  is cloned under the directory /opt/stackstorm/packs/napalm/ 
 ```
 $ ls -la /opt/stackstorm/packs/napalm/
 total 108
