@@ -516,7 +516,7 @@ $ sudo st2 action get napalm.get_facts
 +-------------+--------------------------------------------------------------+
 $ 
 ```
-## Pack usage
+## Pack usage with ST2 cli
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
 ....
@@ -665,7 +665,7 @@ $
 ## About this pack
 ## Pack installation
 ## list of available actions
-## Pack usage
+## Pack usage with ST2 cli
 
 # Looking for more Junos automation examples:  
 
