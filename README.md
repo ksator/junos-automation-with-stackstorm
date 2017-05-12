@@ -98,11 +98,17 @@ chatops  core  default  linux  packs  st2
 ```
 
 ## StackStorm integration pack for napalm  
+
 ### about napalm
+NAPALM (Network Automation and Programmability Abstraction Layer with Multivendor support) is a Python library to interact with different network operating systems.  
+napalm source code: https://github.com/napalm-automation/napalm  
+napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
+
 ### about this pack
-https://github.com/StackStorm-Exchange/stackstorm-napalm  
 StackStorm pack for working with network devices using the NAPALM python library.  
+source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
 All Python dependencies are included in requirements.txt. These will be installed for you when you install the pack using st2 pack install.    
+
 ### pack installation
 to get help with the st2 pack command, run this command: 
 ```
