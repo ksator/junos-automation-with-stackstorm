@@ -260,7 +260,7 @@ $ sudo st2 pack get napalm
 +-------------+--------------------------------------------------------------+
 $ 
 ```
-Packs are placed under the directory /opt/stackstorm/packs: 
+Installed packs are placed under the directory /opt/stackstorm/packs: 
 ```
 ls /opt/stackstorm/packs/
 chatops  core  default  linux  napalm  packs  st2
