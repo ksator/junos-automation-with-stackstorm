@@ -366,6 +366,48 @@ to remove this pack, run this command:
 ```
 $ sudo st2 pack remove napalm
 ```
+## pack configuration file  
+A pack configuration file (/opt/stackstorm/configs/napalm.yaml) is required for this pack.  
+This is where you tell StackStorm about the network devices to use and the credentails for logging into the devices.  
+You need to create this napalm.yaml file.  
+The file [napalm.yaml.example](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/napalm.yaml.example) at the root of the pack repository is an example. 
+```
+$ more /opt/stackstorm/configs/napalm.yaml
+---
+html_table_class: napalm
+config_repo: https://github.com/ksator/ex4300-configs.git
+
+credentials:
+  core:
+    username: pytraining
+    password: Poclab123
+
+devices:
+- hostname: ex4300-9
+  driver: junos
+  credentials: core
+- hostname: ex4300-17
+  driver: junos
+  credentials: core
+- hostname: ex4300-18
+  driver: junos
+  credentials: core
+```
+$ more /etc/hosts
+```
+172.30.179.95   ex4300-9
+172.30.179.74   ex4300-18    
+172.30.179.73   ex4300-17    
+```
+
+Then you need to register the configuration file (each time you change a configuration file) using this command:
+```
+sudo st2ctl reload --register-configs
+```
+you can also use of this command:
+```
+sudo st2 pack register napalm
+```
 
 ## Pack usage
 
