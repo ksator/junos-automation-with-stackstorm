@@ -107,7 +107,7 @@ napalm doc: https://napalm.readthedocs.io/en/latest/index.html
 ### about this pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
-All Python dependencies are included in [https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt](requirements.txt). These python libraries will be installed for you when you install the pack using st2 pack install.    
+All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed for you when you install the pack using st2 pack install.    
 
 ### pack installation
 to get help with the st2 pack command, run this command: 
