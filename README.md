@@ -1,7 +1,8 @@
 # about this repo
-Junos automation with stackstorm. 
+How to automate Junos with stackstorm. 
 
 # about stackstorm
+## what is stackstorm
 StackStorm is event-driven automation: 
 - it doesnt rely on human input. 
 - it reacts to events.  
@@ -11,8 +12,7 @@ Stackstorm has network automation capabilities with the stackstorm packs napalm 
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
 https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (netflix)  
 
-
-# stackstorm documentation: 
+## stackstorm documentation: 
 
 stackstorm documentation: https://docs.stackstorm.com/index.html  
 stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
@@ -68,7 +68,7 @@ $ st2 whoami
 Currently logged in as st2admin
 ```
 
-# packs
+# integration packs
 stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
 to get the list of installed pack, run this command: 
 ```
