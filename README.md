@@ -15,6 +15,8 @@ https://docs.stackstorm.com/index.html
 https://stackstorm-community.slack.com
 
 ## stackstorm installation: 
+
+### all-in-one quick installation: 
 To quickly install ST2 on ubuntu (single-box deployment for demo), run these commands: 
 ```
 sudo apt-get install curl
@@ -47,13 +49,13 @@ Thanks for installing StackStorm! Come visit us in our Slack Channel
 and tell us how it's going. We'd love to hear from you!
 ```
 
-## Verify: 
+### Verify: 
 ```
 $ st2 --version
 st2 2.2.1
 $ st2 --help
 ```
-## User: 
+### User: 
 ```
 $ whoami
 ksator
