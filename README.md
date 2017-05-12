@@ -101,6 +101,12 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
+pack configuration files are located in /opt/stackstorm/configs/ directory.  
+A pack configuration file is a YAML file which contains pack configuration. It is named with the pack name (\<pack name>.yaml). 
+```
+$ ls /opt/stackstorm/configs/
+$
+```
 
 ## StackStorm integration pack for napalm  
 
