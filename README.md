@@ -1,12 +1,16 @@
 ## about this repo
-How to automate Junos with stackstorm (using stackstorm packs napalm and ansible). 
+How to automate Junos with stackstorm. 
 
 ## about stackstorm
 StackStorm is event-driven automation: 
 - doesnt rely on human input. 
-- react to events.
+- react to events.  
+
+Stackstorm has network automation capabilities with the packs napalm and ansible.   
+
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
-https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (netflix)
+https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (netflix)  
+
 
 ## stackstorm documentation: 
 https://docs.stackstorm.com/index.html
