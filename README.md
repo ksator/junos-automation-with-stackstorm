@@ -104,6 +104,13 @@ to get help with the st2 pack command, run this command:
 ```
 $ sudo st2 pack -h
 ```
+this pack is not installed by default.  
+to get information about an installed pack, run this command: 
+```
+$ sudo st2 pack get napalm
+Pack "napalm" is not found.
+$
+```
 to get the list of installed pack, run this command: 
 ```
 $ sudo st2 pack list
@@ -132,12 +139,6 @@ $ sudo st2 pack list
 | st2     | st2     | StackStorm pack  | 0.2.0   | StackStorm, Inc. |
 |         |         | management       |         |                  |
 +---------+---------+------------------+---------+------------------+
-$
-```
-to get information about an installed pack, run this command: 
-```
-$ sudo st2 pack get napalm
-Pack "napalm" is not found.
 $
 ```
 ```
@@ -311,6 +312,7 @@ $
 $ pip list | grep "junos\|jxmlease\|napalm\|json2table\|GitPython"
 $
 ```
+virtualenv for this pack: 
 ```
 $ /opt/stackstorm/virtualenvs/napalm/bin/pip list | grep "junos\|jxmlease\|napalm\|json2table\|GitPython"
 GitPython (2.1.3)
@@ -336,7 +338,6 @@ $
 to remove this pack, run this command:
 ```
 $ sudo st2 pack remove napalm
-
 ```
 
 
