@@ -107,6 +107,54 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
+## Discovering available Packs
+You can visit https://exchange.stackstorm.org/  
+You can use the command **st2 pack search**. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
+```
+$ sudo st2 pack search mierdin
++--------+--------------------------------------------+---------+-----------------------+
+| name   | description                                | version | author                |
++--------+--------------------------------------------+---------+-----------------------+
+| napalm | A StackStorm pack for working with network | 0.2.3   | mierdin, Rob Woodward |
+|        | devices using the NAPALM library           |         |                       |
++--------+--------------------------------------------+---------+-----------------------+
+```
+Use the exact pack name with the below command:
+```
+$ sudo st2 pack show napalm
++-------------+--------------------------------------------------------------+
+| Property    | Value                                                        |
++-------------+--------------------------------------------------------------+
+| name        | napalm                                                       |
+| description | A StackStorm pack for working with network devices using the |
+|             | NAPALM library                                               |
+| author      | mierdin, Rob Woodward                                        |
+| content     | {                                                            |
+|             |     "rules": {                                               |
+|             |         "count": 3                                           |
+|             |     },                                                       |
+|             |     "actions": {                                             |
+|             |         "count": 27                                          |
+|             |     },                                                       |
+|             |     "aliases": {                                             |
+|             |         "count": 1                                           |
+|             |     }                                                        |
+|             | }                                                            |
+| email       | info@stackstorm.com                                          |
+| keywords    | [                                                            |
+|             |     "networking",                                            |
+|             |     "napalm",                                                |
+|             |     "cisco",                                                 |
+|             |     "juniper",                                               |
+|             |     "arista",                                                |
+|             |     "ibm"                                                    |
+|             | ]                                                            |
+| repo_url    | https://github.com/StackStorm-Exchange/stackstorm-napalm     |
+| version     | 0.2.3                                                        |
++-------------+--------------------------------------------------------------+
+```
+
+
 ## Pack configuration files
 They are located in /opt/stackstorm/configs/ directory.  
 A pack configuration file is a YAML file which contains pack configuration. It is named \<pack name>.yaml. 
@@ -174,53 +222,7 @@ $ sudo st2 pack list
 |         |         | management       |         |                  |
 +---------+---------+------------------+---------+------------------+
 ```
-```
-$ sudo st2 pack search nap
-+--------+----------------------+---------+----------------------+
-| name   | description          | version | author               |
-+--------+----------------------+---------+----------------------+
-| napalm | A StackStorm pack    | 0.2.3   | mierdin, Rob         |
-|        | for working with     |         | Woodward             |
-|        | network devices      |         |                      |
-|        | using the NAPALM     |         |                      |
-|        | library              |         |                      |
-+--------+----------------------+---------+----------------------+
-```
-```
-$ sudo st2 pack show napalm
-+-------------+--------------------------------------------------------------+
-| Property    | Value                                                        |
-+-------------+--------------------------------------------------------------+
-| name        | napalm                                                       |
-| description | A StackStorm pack for working with network devices using the |
-|             | NAPALM library                                               |
-| author      | mierdin, Rob Woodward                                        |
-| content     | {                                                            |
-|             |     "rules": {                                               |
-|             |         "count": 3                                           |
-|             |     },                                                       |
-|             |     "actions": {                                             |
-|             |         "count": 27                                          |
-|             |     },                                                       |
-|             |     "aliases": {                                             |
-|             |         "count": 1                                           |
-|             |     }                                                        |
-|             | }                                                            |
-| email       | info@stackstorm.com                                          |
-| keywords    | [                                                            |
-|             |     "networking",                                            |
-|             |     "napalm",                                                |
-|             |     "cisco",                                                 |
-|             |     "juniper",                                               |
-|             |     "arista",                                                |
-|             |     "ibm"                                                    |
-|             | ]                                                            |
-| repo_url    | https://github.com/StackStorm-Exchange/stackstorm-napalm     |
-| version     | 0.2.3                                                        |
-+-------------+--------------------------------------------------------------+
-$ 
-```
-To install this pack, run this command:
+To install the napalm pack, run this command:
 ```
 $ sudo st2 pack install napalm
 
