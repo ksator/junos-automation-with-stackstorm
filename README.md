@@ -360,13 +360,13 @@ $ sudo st2 pack remove napalm
 
 # Looking for more Junos automation examples:  
 
-Junos automation with Network Infrastructure as Code (git, gitlab, gitlabCI, IaC, CI/CD, pipeline, ansible)  
+Junos automation with Network Infrastructure as Code 
 https://gitlab.com/ksator/network-infrastructure-as-code  
 
-How to automate Openconfig configuration on Juniper devices (openconfig, yang, netconf, pyang, pyangbind, ansible,  pyez)     
+How to automate Openconfig configuration on Juniper devices  
 https://github.com/ksator/openconfig-demo-with-juniper-devices  
 
-How to automate verifications on Junos devices (jsnapy)  
+How to automate verifications on Junos devices with JSNAPy
 https://github.com/ksator/junos-verifications-automation-with-jsnapy  
 
 How to delegate junos automation tasks chatting to a bot with slack   
@@ -375,10 +375,10 @@ https://github.com/ksator/junos-automation-with-chatops-in-ams
 How to automate junos with ansible  
 https://github.com/ksator/ansible-training-for-junos-automation  
 
-How to automate junos with python (pyez, ncclient, napalm)  
+How to automate junos with python 
 https://github.com/ksator/python-training-for-network-engineers  
 
-How to orchestrate Junos virtual machines with Vagrant (vagrant, virtual box, ansible, vsrx, vqfx)  
+How to orchestrate Junos virtual machines with Vagrant 
 https://github.com/ksator/vagrant-with-junos  
 
 
