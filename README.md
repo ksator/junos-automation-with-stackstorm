@@ -1,8 +1,9 @@
-# About this repo
-How to automate Junos using stackstorm with the integration packs NAPALM and Ansible.  
+# About this repository
+How to automate Junos using StackStorm with the integration packs NAPALM and Ansible.  
 
-# About stackstorm
-## What is stackstorm
+# About StackStorm
+
+## What is StackStorm
 StackStorm is event-driven automation: 
 - it doesnt rely on human input. 
 - it reacts to events.  
@@ -10,22 +11,23 @@ StackStorm is event-driven automation:
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
 https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (Netflix)  
 
-## Stackstorm documentation 
+## StackStorm documentation 
 
-Stackstorm documentation: https://docs.stackstorm.com/index.html  
-Stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
+StackStorm documentation: https://docs.stackstorm.com/index.html  
+StackStorm exchange (integration packs hub): https://exchange.stackstorm.org/  
 Github: https://github.com/StackStorm  
 Slack team: https://stackstorm-community.slack.com  
 
-## Junos automation with stackstorm 
-Stackstorm has network automation capabilities with the stackstorm intergration packs NAPALM and Ansible. So stackstorm can fire NAPALM or Ansible content based on events (and Junos can be automated with NAPALM and Ansible).     
+## Junos automation with StackStorm 
+StackStorm has network automation capabilities with the StackStorm integration packs napalm and ansible. So StackStorm can fire NAPALM or Ansible content based on events (and Junos can be automated with NAPALM and Ansible).  
+
 You need to enable Netconf on the Junos devices:
 ```
 set system services netconf ssh
 commit
 ```
 
-# Stackstorm installation 
+# StackStorm installation 
 
 ## All-in-one quick installation 
 To quickly install ST2 on ubuntu (single-box deployment for demo), run these commands: 
@@ -74,13 +76,13 @@ $ st2 whoami
 Currently logged in as st2admin
 ```
 
-# Stackstorm integration packs
+# StackStorm integration packs
 
 ## Integration packs hub
-stackstorm exchange: https://exchange.stackstorm.org/  
+StackStorm exchange: https://exchange.stackstorm.org/  
 
 ## List of installed packs
-to get the list of installed pack, run this command: 
+to get the list of installed pack, run the below command. So this is the list of packs installed by default: 
 ```
 $ sudo st2 pack list
 +---------+---------+------------------------------------+---------+------------------+
@@ -107,7 +109,7 @@ chatops  core  default  linux  packs  st2
 ```
 ## Pack configuration files
 They are located in /opt/stackstorm/configs/ directory.  
-A pack configuration file is a YAML file which contains pack configuration. It is named with the pack name (\<pack name>.yaml). 
+A pack configuration file is a YAML file which contains pack configuration. It is named \<pack name>.yaml. 
 Some packs require a pack configuration file (napalm) and others do not use a pack configuration file (ansible).  
 ```
 $ ls /opt/stackstorm/configs/
