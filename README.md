@@ -89,7 +89,7 @@ https://github.com/ksator/ansible-training-for-junos-automation
 How to automate junos with python (pyez, ncclient, napalm)  
 https://github.com/ksator/python-training-for-network-engineers  
 
-How to orchestrate your Junos virtual machines with Vagrant (vagrant, virtual box, ansible, vsrx, vqfx)  
+How to orchestrate Junos virtual machines with Vagrant (vagrant, virtual box, ansible, vsrx, vqfx)  
 https://github.com/ksator/vagrant-with-junos  
 
 
