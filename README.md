@@ -1,5 +1,5 @@
 # About this repository
-How to automate Junos using StackStorm with the integration packs NAPALM and Ansible.  
+How to automate Junos using StackStorm with the integration packs napalm and ansible.  
 
 # About StackStorm
 
@@ -119,7 +119,7 @@ $ sudo st2 pack search mierdin
 |        | devices using the NAPALM library           |         |                       |
 +--------+--------------------------------------------+---------+-----------------------+
 ```
-Use the exact pack name with the below command:
+Once you know the exact pack name, you can use it with the below command to get more details:
 ```
 $ sudo st2 pack show napalm
 +-------------+--------------------------------------------------------------+
@@ -153,7 +153,6 @@ $ sudo st2 pack show napalm
 | version     | 0.2.3                                                        |
 +-------------+--------------------------------------------------------------+
 ```
-
 
 ## Pack configuration files
 They are located in /opt/stackstorm/configs/ directory.  
@@ -242,6 +241,8 @@ $ sudo st2 pack install napalm
 | version     | 0.2.3                                                        |
 | author      | mierdin, Rob Woodward                                        |
 +-------------+--------------------------------------------------------------+
+```
+```
 $ sudo st2 pack list
 +---------+---------+------------------+---------+------------------+
 | ref     | name    | description      | version | author           |
@@ -274,6 +275,8 @@ $ sudo st2 pack list
 | st2     | st2     | StackStorm pack  | 0.2.0   | StackStorm, Inc. |
 |         |         | management       |         |                  |
 +---------+---------+------------------+---------+------------------+
+```
+```
 $ sudo st2 pack get napalm
 +-------------+--------------------------------------------------------------+
 | Property    | Value                                                        |
