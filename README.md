@@ -60,13 +60,13 @@ Thanks for installing StackStorm! Come visit us in our Slack Channel
 and tell us how it's going. We'd love to hear from you!
 ```
 
-## Verify the installation: 
+## Verify the ST2 installation 
 ```
 $ st2 --version
 st2 2.2.1
 $ st2 --help
 ```
-## User: 
+## User 
 ```
 $ whoami
 ksator
@@ -586,30 +586,6 @@ $ sudo st2 execution list
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
 | id                         | action.ref       | context.user | status                   | start_timestamp          | end_timestamp            |
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
-|   5914bf44a374d832ad20b6cc | core.local       | st2admin     | succeeded (1s elapsed)   | Thu, 11 May 2017         | Thu, 11 May 2017         |
-|                            |                  |              |                          | 19:45:08 UTC             | 19:45:09 UTC             |
-|   5914bf47a374d832ad20b6cf | core.remote      | st2admin     | succeeded (2s elapsed)   | Thu, 11 May 2017         | Thu, 11 May 2017         |
-|                            |                  |              |                          | 19:45:11 UTC             | 19:45:13 UTC             |
-| + 5914bf4aa374d832ad20b6d2 | packs.install    | st2admin     | succeeded (18s elapsed)  | Thu, 11 May 2017         | Thu, 11 May 2017         |
-|                            |                  |              |                          | 19:45:14 UTC             | 19:45:32 UTC             |
-| + 5915cc87a374d80940a8c63a | packs.uninstall  | st2admin     | succeeded (3s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 14:53:59 UTC             | 14:54:02 UTC             |
-| + 5915ce3ca374d80940a8c63d | packs.install    | st2admin     | succeeded (121s elapsed) | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 15:01:16 UTC             | 15:03:17 UTC             |
-|   5915f12ea374d80940a8c65e | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 17:30:22 UTC             | 17:30:23 UTC             |
-|   5915f137a374d80940a8c661 | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 17:30:31 UTC             | 17:30:32 UTC             |
-|   5915f665a374d80940a8c664 | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 17:52:37 UTC             | 17:52:38 UTC             |
-|   5915f865a374d80940a8c667 | napalm.get_facts | st2admin     | failed (1s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 18:01:09 UTC             | 18:01:10 UTC             |
-|   5915f88ba374d80940a8c66a | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 18:01:47 UTC             | 18:01:53 UTC             |
-|   5915f8eda374d80940a8c66d | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 18:03:25 UTC             | 18:03:31 UTC             |
-|   5915f94fa374d80940a8c670 | napalm.get_facts | st2admin     | failed (3s elapsed)      | Fri, 12 May 2017         | Fri, 12 May 2017         |
-|                            |                  |              |                          | 18:05:03 UTC             | 18:05:06 UTC             |
 |   5915f9a4a374d80940a8c679 | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
 |                            |                  |              |                          | 18:06:28 UTC             | 18:06:34 UTC             |
 |   5915f9bda374d80940a8c67c | napalm.get_facts | st2admin     | succeeded (6s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
