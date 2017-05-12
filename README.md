@@ -408,8 +408,7 @@ you can also use of this command:
 ```
 sudo st2 pack register napalm
 ```
-
-## Pack usage
+## list of available actions
 
 To get the list of available actions with the integration pack napalm, run this command: 
 ```
@@ -517,6 +516,7 @@ $ sudo st2 action get napalm.get_facts
 +-------------+--------------------------------------------------------------+
 $ 
 ```
+## Pack usage
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
 ....
@@ -688,6 +688,7 @@ $
 ## About Ansible
 ## About this pack
 ## Pack installation
+## list of available actions
 ## Pack usage
 
 # Looking for more Junos automation examples:  
