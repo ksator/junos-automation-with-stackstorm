@@ -1,5 +1,5 @@
 # about this repo
-How to automate Junos with stackstorm. 
+How to automate Junos using stackstorm with the integration packs NAPALM and Ansible.  
 
 # about stackstorm
 ## what is stackstorm
@@ -356,6 +356,113 @@ $ sudo st2 pack remove napalm
 ```
 
 ### pack usage
+
+to get the list of available actions with the integration pack napalm, run this command: 
+```
+$ sudo st2 action list -p napalm
++--------------------------------------+--------+----------------------------------------------------------+
+| ref                                  | pack   | description                                              |
++--------------------------------------+--------+----------------------------------------------------------+
+| napalm.bgp_prefix_exceeded_chain     | napalm | Action Chain to process a BGP neighbour prefix limit     |
+|                                      |        | exceeded event.                                          |
+| napalm.check_consistency             | napalm | Check that the device's configuration is consistent with |
+|                                      |        | the 'golden' config in a Git repository                  |
+| napalm.cli                           | napalm | Run CLI commands on a device using NAPALM.               |
+| napalm.configuration_change_workflow | napalm | Workflow to process a configuration change on a device.  |
+| napalm.get_arp_table                 | napalm | Get the ARP table from a device using NAPALM.            |
+| napalm.get_bgp_config                | napalm | Get BGP configuration from a device using NAPALM.        |
+| napalm.get_bgp_neighbors             | napalm | Get the BGP neighbors from a device using NAPALM.        |
+| napalm.get_bgp_neighbors_detail      | napalm | Get a detailed BGP neighbor from a device using NAPALM.  |
+| napalm.get_config                    | napalm | Get configuration from the device using NAPALM.          |
+| napalm.get_environment               | napalm | Get the environment sensor output from a device using    |
+|                                      |        | NAPALM.                                                  |
+| napalm.get_facts                     | napalm | Get the various facts (Version, Serial Number, Vendor,   |
+|                                      |        | Model, etc.) from a device using NAPALM.                 |
+| napalm.get_firewall_policies         | napalm | Get firewall policies from a device using NAPALM.        |
+| napalm.get_interfaces                | napalm | Get interfaces from a device using NAPALM.               |
+| napalm.get_lldp_neighbors            | napalm | Get the LLDP Neighbours from a device using NAPALM.      |
+| napalm.get_log                       | napalm | Get logs from devices using NAPALM.                      |
+| napalm.get_mac_address_table         | napalm | Get the MAC Address table from a device using NAPALM.    |
+| napalm.get_network_instances         | napalm | Get details of network/routing instances/vrfs from a     |
+|                                      |        | network device using NAPALM.                             |
+| napalm.get_ntp                       | napalm | Gets NTP information from a network device using NAPALM. |
+| napalm.get_optics                    | napalm | Fetches the power usage on the various transceivers      |
+|                                      |        | installed on the device (in dbm) using NAPALM.           |
+| napalm.get_probes_config             | napalm | Get RPM (JunOS) or IP SLA (IOS-XR) probe configuration   |
+|                                      |        | from a device using NAPALM.                              |
+| napalm.get_probes_results            | napalm | Get RPM (JunOS) or IP SLA (IOS-XR) probe results from a  |
+|                                      |        | device using NAPALM.                                     |
+| napalm.get_route_to                  | napalm | Shows an IP route on a network device using NAPALM.      |
+| napalm.get_snmp_information          | napalm | Get the SNMP information from a device using NAPALM.     |
+| napalm.interface_down_workflow       | napalm | Workflow to process an interface down event on a device. |
+| napalm.loadconfig                    | napalm | Loads (merge) a configuration to a network device using  |
+|                                      |        | NAPALM.                                                  |
+| napalm.ping                          | napalm | Run a ping from a network device using NAPALM.           |
+| napalm.traceroute                    | napalm | Run a traceroute from a network device using NAPALM.     |
++--------------------------------------+--------+----------------------------------------------------------+
+$
+```
+to get the details about one action, run this command:  
+```
+$ sudo st2 action get napalm.get_facts
++-------------+--------------------------------------------------------------+
+| Property    | Value                                                        |
++-------------+--------------------------------------------------------------+
+| id          | 5907a0d5a374d84b3cc1f4a0                                     |
+| uid         | action:napalm:get_facts                                      |
+| ref         | napalm.get_facts                                             |
+| pack        | napalm                                                       |
+| name        | get_facts                                                    |
+| description | Get the various facts (Version, Serial Number, Vendor,       |
+|             | Model, etc.) from a device using NAPALM.                     |
+| enabled     | True                                                         |
+| entry_point | get_facts.py                                                 |
+| runner_type | python-script                                                |
+| parameters  | {                                                            |
+|             |     "credentials": {                                         |
+|             |         "position": 3,                                       |
+|             |         "required": false,                                   |
+|             |         "type": "string",                                    |
+|             |         "description": "The credentials group which contains |
+|             | the username and password to log in"                         |
+|             |     },                                                       |
+|             |     "htmlout": {                                             |
+|             |         "position": 4,                                       |
+|             |         "required": false,                                   |
+|             |         "type": "boolean",                                   |
+|             |         "description": "In addition to the normal output     |
+|             | also includes html output."                                  |
+|             |     },                                                       |
+|             |     "hostname": {                                            |
+|             |         "position": 0,                                       |
+|             |         "required": true,                                    |
+|             |         "type": "string",                                    |
+|             |         "description": "The hostname of the device to        |
+|             | connect to. Driver must be specified if hostname is not in   |
+|             | configuration. Hostname without FQDN can be given if device  |
+|             | is in configuration."                                        |
+|             |     },                                                       |
+|             |     "driver": {                                              |
+|             |         "position": 1,                                       |
+|             |         "required": false,                                   |
+|             |         "type": "string",                                    |
+|             |         "description": "Device driver name for connecting to |
+|             | device, see                                                  |
+|             | https://napalm.readthedocs.io/en/latest/support/index.html   |
+|             | for list."                                                   |
+|             |     },                                                       |
+|             |     "port": {                                                |
+|             |         "position": 2,                                       |
+|             |         "required": false,                                   |
+|             |         "type": "string",                                    |
+|             |         "description": "port for accessing device"           |
+|             |     }                                                        |
+|             | }                                                            |
+| notify      |                                                              |
+| tags        |                                                              |
++-------------+--------------------------------------------------------------+
+$ 
+```
 
 ## StackStorm integration pack for ansible 
 ### about ansible
