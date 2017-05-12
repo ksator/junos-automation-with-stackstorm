@@ -19,7 +19,7 @@ Github: https://github.com/StackStorm
 Slack team: https://stackstorm-community.slack.com  
 
 ## Junos automation with StackStorm 
-StackStorm has network automation capabilities with the StackStorm integration packs napalm and ansible. So StackStorm can fire NAPALM or Ansible content based on events (and Junos can be automated with NAPALM and Ansible).  
+StackStorm has network automation capabilities with the StackStorm integration packs napalm and ansible. So StackStorm can fire NAPALM or Ansible content based on events (and Junos can be automated with both NAPALM and Ansible).  
 
 You need to enable Netconf on the Junos devices:
 ```
@@ -100,7 +100,6 @@ $ sudo st2 pack list
 |         |         | pack management functionality.     |         |                  |
 | st2     | st2     | StackStorm pack management         | 0.2.0   | StackStorm, Inc. |
 +---------+---------+------------------------------------+---------+------------------+
-$ 
 ```
 Installed packs are placed under /opt/stackstorm/packs directory: 
 ```
@@ -123,6 +122,12 @@ NAPALM (Network Automation and Programmability Abstraction Layer with Multivendo
 napalm source code: https://github.com/napalm-automation/napalm  
 napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
 
+It is not require to install NAPALM in order to use the ST2 integration pack for NAPALM: 
+```
+$ pip list | grep napalm
+$
+```
+
 ## About this pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
@@ -138,7 +143,6 @@ to get information about an installed pack, run this command:
 ```
 $ sudo st2 pack get napalm
 Pack "napalm" is not found.
-$
 ```
 to get the list of installed pack, run this command: 
 ```
@@ -168,11 +172,9 @@ $ sudo st2 pack list
 | st2     | st2     | StackStorm pack  | 0.2.0   | StackStorm, Inc. |
 |         |         | management       |         |                  |
 +---------+---------+------------------+---------+------------------+
-$
 ```
 ```
 $ sudo st2 pack search napalm
-
 +--------+----------------------+---------+----------------------+
 | name   | description          | version | author               |
 +--------+----------------------+---------+----------------------+
@@ -182,7 +184,6 @@ $ sudo st2 pack search napalm
 |        | using the NAPALM     |         |                      |
 |        | library              |         |                      |
 +--------+----------------------+---------+----------------------+
-$
 ```
 ```
 $ sudo st2 pack show napalm
@@ -286,14 +287,12 @@ $ sudo st2 pack get napalm
 |             | ]                                                            |
 | description | A StackStorm pack for working with network devices using the |
 |             | NAPALM library                                               |
-+-------------+--------------------------------------------------------------+
-$ 
++-------------+--------------------------------------------------------------+ 
 ```
 Installed packs are placed under the directory /opt/stackstorm/packs: 
 ```
 ls /opt/stackstorm/packs/
 chatops  core  default  linux  napalm  packs  st2
-$
 ```
 the repo https://github.com/StackStorm-Exchange/stackstorm-napalm  is cloned under the directory /opt/stackstorm/packs/napalm/ 
 ```
@@ -315,7 +314,6 @@ drwxrwxr-x 3 root st2packs  4096 mei 12 13:51 lint-configs
 -rwxrwxr-x 1 root st2packs  9125 mei 12 13:51 README.md
 -rwxrwxr-x 1 root st2packs   155 mei 12 13:51 requirements.txt
 drwxrwxr-x 2 root st2packs  4096 mei 12 13:51 rules
-$
 ```
 
 A virtualenv is created for each pack under /opt/stackstorm/virtualenv.  
@@ -335,7 +333,6 @@ napalm-panos
 napalm
 json2table
 GitPython
-$
 ```
 ```
 $ pip list | grep "junos\|jxmlease\|napalm\|json2table\|GitPython"
@@ -361,7 +358,6 @@ napalm-panos (0.4.0)
 napalm-pluribus (0.5.1)
 napalm-ros (0.2.2)
 napalm-vyos (0.1.3)
-$ 
 ```
 
 to remove this pack, run this command:
@@ -455,7 +451,6 @@ $ sudo st2 action list -p napalm
 | napalm.ping                          | napalm | Run a ping from a network device using NAPALM.           |
 | napalm.traceroute                    | napalm | Run a traceroute from a network device using NAPALM.     |
 +--------------------------------------+--------+----------------------------------------------------------+
-$
 ```
 to get the details about one action, run this command:  
 ```
@@ -515,8 +510,7 @@ $ sudo st2 action get napalm.get_facts
 |             | }                                                            |
 | notify      |                                                              |
 | tags        |                                                              |
-+-------------+--------------------------------------------------------------+
-$ 
++-------------+--------------------------------------------------------------+ 
 ```
 ## Pack usage with ST2 cli
 ```
@@ -581,7 +575,6 @@ result:
       vendor: Juniper
   stderr: ''
   stdout: ''
-$
 ```
 ```
 $ sudo st2 execution list
@@ -597,7 +590,6 @@ $ sudo st2 execution list
 |   5915fbb6a374d80940a8c682 | napalm.get_facts | st2admin     | succeeded (7s elapsed)   | Fri, 12 May 2017         | Fri, 12 May 2017         |
 |                            |                  |              |                          | 18:15:18 UTC             | 18:15:25 UTC             |
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
-$
 ```
 ```
 $ sudo st2 execution get 5915fa85a374d80940a8c67f
@@ -660,7 +652,6 @@ result:
       vendor: Juniper
   stderr: ''
   stdout: ''
-$
 ```
 # StackStorm integration pack for ansible 
 ## About Ansible
