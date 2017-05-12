@@ -190,12 +190,75 @@ $
 ```
 To install this pack, run this command:
 ```
-sudo st2 pack install napalm
-```
-```
-sudo st2 pack get napalm
-```
+$ sudo st2 pack install napalm
 
+	[ succeeded ] download pack
+	[ succeeded ] make a prerun
+	[ succeeded ] install pack dependencies
+	[ succeeded ] register pack
+
++-------------+--------------------------------------------------------------+
+| Property    | Value                                                        |
++-------------+--------------------------------------------------------------+
+| name        | napalm                                                       |
+| description | A StackStorm pack for working with network devices using the |
+|             | NAPALM library                                               |
+| version     | 0.2.3                                                        |
+| author      | mierdin, Rob Woodward                                        |
++-------------+--------------------------------------------------------------+
+$ sudo st2 pack list
++---------+---------+------------------+---------+------------------+
+| ref     | name    | description      | version | author           |
++---------+---------+------------------+---------+------------------+
+| chatops | chatops | Chatops          | 0.2.0   | Kirill Enykeev   |
+|         |         | integration pack |         |                  |
+| core    | core    | st2 content pack | 0.2.1   | st2-dev          |
+|         |         | containing basic |         |                  |
+|         |         | actions.         |         |                  |
+| default | default | Pack where all   | 0.1.0   | st2-dev          |
+|         |         | the resources    |         |                  |
+|         |         | which are        |         |                  |
+|         |         | created using    |         |                  |
+|         |         | the API and      |         |                  |
+|         |         | don't have a     |         |                  |
+|         |         | pack specified   |         |                  |
+|         |         | get saved.       |         |                  |
+| linux   | linux   | Generic linux    | 0.1.0   | st2-dev          |
+|         |         | actions          |         |                  |
+| napalm  | napalm  | A StackStorm     | 0.2.3   | mierdin, Rob     |
+|         |         | pack for working |         | Woodward         |
+|         |         | with network     |         |                  |
+|         |         | devices using    |         |                  |
+|         |         | the NAPALM       |         |                  |
+|         |         | library          |         |                  |
+| packs   | packs   | core st2 content | 0.2.0   | st2-dev          |
+|         |         | pack containing  |         |                  |
+|         |         | pack management  |         |                  |
+|         |         | functionality.   |         |                  |
+| st2     | st2     | StackStorm pack  | 0.2.0   | StackStorm, Inc. |
+|         |         | management       |         |                  |
++---------+---------+------------------+---------+------------------+
+$ sudo st2 pack get napalm
++-------------+--------------------------------------------------------------+
+| Property    | Value                                                        |
++-------------+--------------------------------------------------------------+
+| name        | napalm                                                       |
+| version     | 0.2.3                                                        |
+| author      | mierdin, Rob Woodward                                        |
+| email       | info@stackstorm.com                                          |
+| keywords    | [                                                            |
+|             |     "networking",                                            |
+|             |     "napalm",                                                |
+|             |     "cisco",                                                 |
+|             |     "juniper",                                               |
+|             |     "arista",                                                |
+|             |     "ibm"                                                    |
+|             | ]                                                            |
+| description | A StackStorm pack for working with network devices using the |
+|             | NAPALM library                                               |
++-------------+--------------------------------------------------------------+
+$ 
+```
 Packs are placed under the directory /opt/stackstorm/packs: 
 ```
 ls /opt/stackstorm/packs/
