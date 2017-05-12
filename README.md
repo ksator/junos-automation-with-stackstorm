@@ -10,6 +10,13 @@ StackStorm is event-driven automation:
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
 https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (netflix)  
 
+## stackstorm documentation: 
+
+stackstorm documentation: https://docs.stackstorm.com/index.html  
+stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
+github: https://github.com/StackStorm  
+slack team: https://stackstorm-community.slack.com  
+
 ## Junos automation with stackstorm
 Stackstorm has network automation capabilities with the stackstorm intergration packs napalm and ansible. So stackstorm can fire napalm or ansible content based on events (and Junos can be automated with napalm and ansible).     
 You need to enable Netconf on the Junos devices:
@@ -17,13 +24,6 @@ You need to enable Netconf on the Junos devices:
 set system services netconf ssh
 commit
 ```
-
-## stackstorm documentation: 
-
-stackstorm documentation: https://docs.stackstorm.com/index.html  
-stackstorm exchange (integration packs hub): https://exchange.stackstorm.org/  
-github: https://github.com/StackStorm  
-slack team: https://stackstorm-community.slack.com  
 
 # stackstorm installation: 
 
@@ -103,6 +103,7 @@ chatops  core  default  linux  packs  st2
 ```
 pack configuration files are located in /opt/stackstorm/configs/ directory.  
 A pack configuration file is a YAML file which contains pack configuration. It is named with the pack name (\<pack name>.yaml). 
+Some packs require a pack configuration file (napalm) and others do not use a pack configuration file (ansible).  
 ```
 $ ls /opt/stackstorm/configs/
 $
