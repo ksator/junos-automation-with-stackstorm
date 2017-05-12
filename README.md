@@ -170,7 +170,7 @@ NAPALM (Network Automation and Programmability Abstraction Layer with Multivendo
 napalm source code: https://github.com/napalm-automation/napalm  
 napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
 
-It is not require to install NAPALM in order to use the napalm pack (the ST2 integration pack for NAPALM): 
+It is not required to install NAPALM in order to use the napalm pack (the ST2 integration pack for NAPALM): 
 ```
 $ pip list | grep napalm
 $
@@ -179,7 +179,7 @@ $
 ## About the napalm pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
-All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed (in a virtualenv) when you install the pack using st2 pack install.    
+All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed (in a virtualenv) when you will install the pack using st2 pack install.    
 
 ## napalm pack installation
 to get help with the st2 pack command, run this command: 
@@ -191,35 +191,6 @@ to get information about an installed pack, run this command:
 ```
 $ sudo st2 pack get napalm
 Pack "napalm" is not found.
-```
-to get the list of installed pack, run this command: 
-```
-$ sudo st2 pack list
-+---------+---------+------------------+---------+------------------+
-| ref     | name    | description      | version | author           |
-+---------+---------+------------------+---------+------------------+
-| chatops | chatops | Chatops          | 0.2.0   | Kirill Enykeev   |
-|         |         | integration pack |         |                  |
-| core    | core    | st2 content pack | 0.2.1   | st2-dev          |
-|         |         | containing basic |         |                  |
-|         |         | actions.         |         |                  |
-| default | default | Pack where all   | 0.1.0   | st2-dev          |
-|         |         | the resources    |         |                  |
-|         |         | which are        |         |                  |
-|         |         | created using    |         |                  |
-|         |         | the API and      |         |                  |
-|         |         | don't have a     |         |                  |
-|         |         | pack specified   |         |                  |
-|         |         | get saved.       |         |                  |
-| linux   | linux   | Generic linux    | 0.1.0   | st2-dev          |
-|         |         | actions          |         |                  |
-| packs   | packs   | core st2 content | 0.2.0   | st2-dev          |
-|         |         | pack containing  |         |                  |
-|         |         | pack management  |         |                  |
-|         |         | functionality.   |         |                  |
-| st2     | st2     | StackStorm pack  | 0.2.0   | StackStorm, Inc. |
-|         |         | management       |         |                  |
-+---------+---------+------------------+---------+------------------+
 ```
 To install the napalm pack, run this command:
 ```
