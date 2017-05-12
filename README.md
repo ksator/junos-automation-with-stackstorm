@@ -90,14 +90,15 @@ $ sudo st2 pack list
 +---------+---------+------------------------------------+---------+------------------+
 $ 
 ```
-Packs are placed under /opt/stackstorm/packs directory: 
+Installed packs are placed under /opt/stackstorm/packs directory: 
 ```
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
 
-## napalm  
-StackStorm pack for working with network devices using the NAPALM python library: https://github.com/StackStorm-Exchange/stackstorm-napalm  
+## StackStorm integration pack for napalm  
+https://github.com/StackStorm-Exchange/stackstorm-napalm  
+StackStorm pack for working with network devices using the NAPALM python library  
 All Python dependencies are included in requirements.txt. These will be installed for you when you install the pack using st2 pack install.    
 ```
 $ sudo st2 pack -h
