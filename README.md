@@ -97,9 +97,12 @@ chatops  core  default  linux  packs  st2
 ```
 
 ## StackStorm integration pack for napalm  
+### about napalm
+### about this pack
 https://github.com/StackStorm-Exchange/stackstorm-napalm  
 StackStorm pack for working with network devices using the NAPALM python library.  
 All Python dependencies are included in requirements.txt. These will be installed for you when you install the pack using st2 pack install.    
+### pack installation
 to get help with the st2 pack command, run this command: 
 ```
 $ sudo st2 pack -h
@@ -340,6 +343,13 @@ to remove this pack, run this command:
 $ sudo st2 pack remove napalm
 ```
 
+### pack usage
+
+## StackStorm integration pack for ansible 
+### about ansible
+### about this pack
+### pack installation
+### pack usage
 
 # Looking for more Junos automation examples:  
 
