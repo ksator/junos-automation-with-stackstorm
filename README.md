@@ -460,7 +460,7 @@ $ sudo st2 action list -p napalm
 | napalm.traceroute                    | napalm | Run a traceroute from a network device using NAPALM.     |
 +--------------------------------------+--------+----------------------------------------------------------+
 ```
-to get the details about one action, run this command:  
+To get the details about one action, run one of the two below commands (I prefer the second one):  
 ```
 $ sudo st2 action get napalm.get_facts
 +-------------+--------------------------------------------------------------+
@@ -519,6 +519,48 @@ $ sudo st2 action get napalm.get_facts
 | notify      |                                                              |
 | tags        |                                                              |
 +-------------+--------------------------------------------------------------+ 
+```
+```
+$ sudo st2 run napalm.get_facts -h
+
+Get the various facts (Version, Serial Number, Vendor, Model, etc.)
+from a device using NAPALM.
+
+Required Parameters:
+    hostname
+        The hostname of the device to connect to. Driver must be specified if
+        hostname is not in configuration. Hostname without FQDN can be given
+        if device is in configuration.
+        Type: string
+
+Optional Parameters:
+    driver
+        Device driver name for connecting to device, see
+        https://napalm.readthedocs.io/en/latest/support/index.html for list.
+        Type: string
+
+    port
+        port for accessing device
+        Type: string
+
+    credentials
+        The credentials group which contains the username and password to log
+        in
+        Type: string
+
+    htmlout
+        In addition to the normal output also includes html output.
+        Type: boolean
+
+    env
+        Environment variables which will be available to the script.
+        Type: object
+
+    timeout
+        Action timeout in seconds. Action will get killed if it doesn't finish
+        in timeout seconds.
+        Type: integer
+        Default: 600
 ```
 ## Pack usage with ST2 cli
 ```
