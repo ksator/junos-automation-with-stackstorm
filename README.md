@@ -110,7 +110,7 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
-## Discovering available Packs
+## Discovering available packs
 You can visit the integration packs hub https://exchange.stackstorm.org/  
 You can use the command `st2 pack search`. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
 ```
@@ -542,7 +542,7 @@ Optional Parameters:
 ```
 ## Execute actions from napalm pack using StackStorm CLI
 
-napalm.get_facts
+Get various facts (Version, Serial Number,  Model, etc.) from a device:
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
 ....
@@ -606,7 +606,7 @@ result:
   stderr: ''
   stdout: ''
 ```
-napalm.get_bgp_neighbors_detail
+Get a detailed BGP neighbor from a device: 
 ```
 $ sudo st2 run napalm.get_bgp_neighbors_detail hostname=ex4300-9 neighbor=192.168.0.4
 ..
@@ -659,7 +659,7 @@ result:
   stderr: ''
   stdout: ''
 ```
-napalm.get_lldp_neighbors
+Get the LLDP Neighbors from a device:
 ```
 $ sudo st2 run napalm.get_lldp_neighbors hostname=ex4300-9
 ..
@@ -680,7 +680,7 @@ result:
   stderr: ''
   stdout: ''
 ```
-napalm.get_interfaces
+Get interfaces from a device:
 ```
 $ sudo st2 run napalm.get_interfaces -h
 
@@ -832,7 +832,7 @@ result:
   stderr: ''
   stdout: ''
 ```
-napalm.ping
+Run a ping from a network device:
 ```
 $ sudo st2 run napalm.ping hostname=ex4300-9 destination=192.168.0.4 source=192.168.0.5 ttl=1
 ....
