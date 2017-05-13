@@ -347,7 +347,7 @@ to remove this pack, run this command:
 ```
 $ sudo st2 pack remove napalm
 ```
-## pack configuration file  
+## napalm pack configuration file  
 A pack configuration file (/opt/stackstorm/configs/napalm.yaml) is required for this pack.  
 This is where you tell StackStorm about the network devices to use and the credentails for logging into the devices.  
 You need to create this napalm.yaml file.  
@@ -601,9 +601,19 @@ result:
   stderr: ''
   stdout: ''
 ```
-## Executed actions
 
-### Get the list of the 50 most recent action executions
+# ansible pack
+## About Ansible
+## About this ansible pack
+## ansible Pack installation
+## ansible pack configuration file  
+This pack doesnt use a configuration file. There is no configuration file for this pack in the directory /opt/stackstorm/configs/
+## list of available actions
+## Execute ansible actions with ST2 cli
+
+# Executed actions
+
+## Get the list of the 50 most recent action executions
 ```
 $ sudo st2 execution list
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
@@ -619,7 +629,7 @@ $ sudo st2 execution list
 |                            |                  |              |                          | 18:15:18 UTC             | 18:15:25 UTC             |
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
 ```
-### Get information about an executed action: 
+## Get information about an executed action: 
 ```
 $ sudo st2 execution get 5915fa85a374d80940a8c67f
 id: 5915fa85a374d80940a8c67f
@@ -682,12 +692,6 @@ result:
   stderr: ''
   stdout: ''
 ```
-# StackStorm integration pack for ansible 
-## About Ansible
-## About this pack
-## Pack installation
-## list of available actions
-## Pack usage with ST2 cli
 
 # Looking for more Junos automation examples:  
 
