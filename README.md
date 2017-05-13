@@ -676,6 +676,195 @@ result:
   stderr: ''
   stdout: ''
 ```
+napalm.get_interfaces
+```
+$ sudo st2 run napalm.get_interfaces -h
+
+Get interfaces from a device using NAPALM.
+
+Required Parameters:
+    hostname
+        The hostname of the device to connect to. Driver must be specified if
+        hostname is not in configuration. Hostname without FQDN can be given
+        if device is in configuration.
+        Type: string
+
+Optional Parameters:
+    driver
+        Device driver name for connecting to device, see
+        https://napalm.readthedocs.io/en/latest/support/index.html for list.
+        Type: string
+
+    port
+        port for accessing device
+        Type: string
+
+    credentials
+        The credentials group which contains the username and password to log
+        in
+        Type: string
+
+    interface
+        Get details of a specific interface.
+        Type: string
+
+    counters
+        Get only counter information for the interfaces interfaces
+        Type: boolean
+
+    ipaddresses
+        Get only the ip addresses on the interfaces
+        Type: boolean
+
+    htmlout
+        In addition to the normal output also includes html output.
+        Type: boolean
+
+    env
+        Environment variables which will be available to the script.
+        Type: object
+
+    timeout
+        Action timeout in seconds. Action will get killed if it doesn't finish
+        in timeout seconds.
+        Type: integer
+        Default: 600
+```
+```
+$ sudo st2 run napalm.get_interfaces hostname=ex4300-9 interface=ge-0/0/1
+...
+id: 5916c622a374d80940a8c6bb
+status: succeeded
+parameters: 
+  hostname: ex4300-9
+  interface: ge-0/0/1
+result: 
+  exit_code: 0
+  result:
+    raw:
+      description: ex4300-18
+      is_enabled: true
+      is_up: true
+      last_flapped: 11205279.0
+      mac_address: 4C:96:14:E4:51:04
+      name: ge-0/0/1
+      speed: -1
+  stderr: ''
+  stdout: ''
+```
+```
+$ sudo st2 run napalm.get_interfaces hostname=ex4300-9 interface=ge-0/0/1 counters=True
+..
+id: 5916c62ea374d80940a8c6be
+status: succeeded
+parameters: 
+  counters: true
+  hostname: ex4300-9
+  interface: ge-0/0/1
+result: 
+  exit_code: 0
+  result:
+    raw:
+      name: ge-0/0/1
+      rx_broadcast_packets: 4589
+      rx_discards: 0
+      rx_errors: 0
+      rx_multicast_packets: 356359
+      rx_octets: 164697069
+      rx_unicast_packets: 732777
+      tx_broadcast_packets: 4483
+      tx_discards: 0
+      tx_errors: 0
+      tx_multicast_packets: 356365
+      tx_octets: 164465479
+      tx_unicast_packets: 732891
+  stderr: ''
+  stdout: ''
+```
+```
+$ sudo st2 run napalm.get_interfaces hostname=ex4300-9 ipaddresses=True
+..
+id: 5916c690a374d80940a8c6c1
+status: succeeded
+parameters: 
+  hostname: ex4300-9
+  ipaddresses: true
+result: 
+  exit_code: 0
+  result:
+    raw:
+      bme0.0:
+        ipv4:
+          128.0.0.1:
+            prefix_length: 2
+          128.0.0.16:
+            prefix_length: 2
+          128.0.0.32:
+            prefix_length: 2
+          128.0.0.4:
+            prefix_length: 2
+      ge-0/0/0.0:
+        ipv4:
+          192.168.0.5:
+            prefix_length: 31
+      ge-0/0/1.0:
+        ipv4:
+          192.168.0.1:
+            prefix_length: 31
+      jsrv.1:
+        ipv4:
+          128.0.0.127:
+            prefix_length: 2
+      lo0.0:
+        ipv4:
+          127.0.0.1:
+            prefix_length: 32
+          192.179.0.95:
+            prefix_length: 32
+      me0.0:
+        ipv4:
+          172.30.179.95:
+            prefix_length: 24
+  stderr: ''
+  stdout: ''
+```
+
+napalm.ping
+```
+$ sudo st2 run napalm.ping hostname=ex4300-9 destination=192.168.0.4 source=192.168.0.5 ttl=1
+....
+id: 5916c869a374d80940a8c6c4
+status: succeeded
+parameters: 
+  destination: 192.168.0.4
+  hostname: ex4300-9
+  source: 192.168.0.5
+  ttl: 1
+result: 
+  exit_code: 0
+  result:
+    raw:
+      success:
+        packet_loss: 0
+        probes_sent: 5
+        results:
+        - ip_address: 192.168.0.4
+          rtt: 3.589
+        - ip_address: 192.168.0.4
+          rtt: 1.195
+        - ip_address: 192.168.0.4
+          rtt: 3.148
+        - ip_address: 192.168.0.4
+          rtt: 3.154
+        - ip_address: 192.168.0.4
+          rtt: 2.165
+        rtt_avg: 2.65
+        rtt_max: 3.589
+        rtt_min: 1.195
+        rtt_stddev: 0.864
+  stderr: ''
+  stdout: ''
+``` 
 
 
 # ansible pack
