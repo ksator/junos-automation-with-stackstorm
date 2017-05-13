@@ -17,8 +17,8 @@ Github: https://github.com/StackStorm
 Slack team: https://stackstorm-community.slack.com  
 
 ## Junos automation with StackStorm 
-StackStorm has network automation capabilities with the StackStorm integration packs napalm and ansible. So StackStorm can fire NAPALM or Ansible content based on events (and Junos can be automated with both NAPALM and Ansible).  
-
+StackStorm has network automation capabilities with the StackStorm integration packs napalm and ansible. So StackStorm can fire NAPALM or Ansible content based on events.  
+Junos can be automated with both NAPALM and Ansible.  
 You need to enable Netconf on the Junos devices:
 ```
 set system services netconf ssh
@@ -68,20 +68,24 @@ $ st2 --help
 ```
 ## User 
 ```
-$ whoami
-ksator
 $ st2 whoami 
 Currently logged in as st2admin
+$ whoami
+ksator
+$ echo $USER
+ksator
 ```
 
 # StackStorm integration packs
+
+Integration packs extend StackStorm to integrate it with external systems (Ansible, NAPALM, Puppet ....)  
 
 ## Integration packs hub
 StackStorm exchange: https://exchange.stackstorm.org/  
 StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
 
 ## List of installed packs
-to get the list of installed pack, run the below command. So this is the list of packs installed by default: 
+to list all installed pack, run the below command. So this is the list of packs installed by default: 
 ```
 $ sudo st2 pack list
 +---------+---------+------------------------------------+---------+------------------+
@@ -106,7 +110,7 @@ $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
 ## Discovering available Packs
-You can visit https://exchange.stackstorm.org/  
+You can visit the integration packs hub https://exchange.stackstorm.org/  
 You can use the command **st2 pack search**. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
 ```
 $ sudo st2 pack search mierdin
@@ -246,7 +250,7 @@ $ sudo st2 pack list
 |         |         | management       |         |                  |
 +---------+---------+------------------+---------+------------------+
 ```
-Get more details about the napalm pack installed:
+Get detailed information about an installed pack:
 ```
 $ sudo st2 pack get napalm
 +-------------+--------------------------------------------------------------+
