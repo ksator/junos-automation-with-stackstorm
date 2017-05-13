@@ -28,7 +28,7 @@ commit
 # StackStorm installation 
 
 ## All-in-one quick installation 
-Run these commands to execute a deployment script that quickly install ST2 on ubuntu (single-box deployment for demo).  
+Run these commands to execute a deployment script that quickly install StackStorm on ubuntu (single-box deployment for demo).  
 It will create the st2 user st2admin with the password Ch@ngeMe. 
 ```
 sudo apt-get install curl
@@ -61,7 +61,7 @@ Thanks for installing StackStorm! Come visit us in our Slack Channel
 and tell us how it's going. We'd love to hear from you!
 ```
 
-## Verify the ST2 installation 
+## Verify the StackStorm installation 
 ```
 $ st2 --version
 st2 2.2.1
@@ -175,7 +175,7 @@ NAPALM (Network Automation and Programmability Abstraction Layer with Multivendo
 napalm source code: https://github.com/napalm-automation/napalm  
 napalm doc: https://napalm.readthedocs.io/en/latest/index.html  
 
-It is not required to install NAPALM in order to use the napalm pack (the ST2 integration pack for NAPALM): 
+It is not required to install NAPALM in order to use the napalm pack (the StackStorm integration pack for NAPALM): 
 ```
 $ pip list | grep napalm
 $
@@ -540,7 +540,7 @@ Optional Parameters:
         Type: integer
         Default: 600
 ```
-## Execute actions from napalm pack using ST2 cli
+## Execute actions from napalm pack using StackStorm CLI
 
 napalm.get_facts
 ```
@@ -877,7 +877,7 @@ result:
 ## ansible pack configuration file  
 This pack doesnt use a configuration file. There is no configuration file for this pack in the directory `/opt/stackstorm/configs/`
 ## list of available actions with the integration pack ansible
-## Execute actions from ansible pack using ST2 cli
+## Execute actions from ansible pack using StackStorm CLI
 
 # Executed actions
 
