@@ -537,7 +537,8 @@ Optional Parameters:
         Type: integer
         Default: 600
 ```
-## Execute napalm actions using ST2 cli
+## Execute actions from napalm pack using ST2 cli
+
 napalm.get_facts
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
@@ -869,12 +870,12 @@ result:
 
 # ansible pack
 ## About Ansible
-## About this ansible pack
-## ansible Pack installation
+## About the ansible pack
+## ansible pack installation
 ## ansible pack configuration file  
 This pack doesnt use a configuration file. There is no configuration file for this pack in the directory /opt/stackstorm/configs/
 ## list of available actions
-## Execute ansible actions with ST2 cli
+## Execute actions from ansible pack using ST2 cli
 
 # Executed actions
 
