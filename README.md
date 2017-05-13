@@ -350,9 +350,10 @@ $ sudo st2 pack remove napalm
 ```
 ## napalm pack configuration file  
 A pack configuration file (`/opt/stackstorm/configs/napalm.yaml`) is required for this pack.  
-This is where you tell StackStorm about the network devices to use and the credentails for logging into the devices.  
+This is where you tell to StackStorm about the network devices to use and the credentails for logging into the devices.  
 You need to create this `napalm.yaml` file.  
-The file [napalm.yaml.example](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/napalm.yaml.example) at the root of the pack repository is an example. 
+The file [napalm.yaml.example](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/napalm.yaml.example) at the root of the pack repository is an example.  
+Here's the one I am using:   
 ```
 $ more /opt/stackstorm/configs/napalm.yaml
 ---
@@ -375,11 +376,12 @@ devices:
   driver: junos
   credentials: core
 ```
+If the hostnames above do not resolve to IP, update the ```/etc/hosts``` file.
 ```
-$ more /etc/hosts
-172.30.179.95   ex4300-9
-172.30.179.74   ex4300-18    
-172.30.179.73   ex4300-17    
+$ more /etc/hosts | grep ex4300
+172.30.179.95	ex4300-9
+172.30.179.74	ex4300-18    
+172.30.179.73	ex4300-17    
 ```
 
 Then you need to register the configuration file (each time you change a configuration file) using this command:
