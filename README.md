@@ -390,7 +390,7 @@ you can also use of this command:
 ```
 sudo st2 pack register napalm
 ```
-## list of available actions
+## list of available actions with the integration pack napalm
 
 To get the list of available actions with the integration pack napalm, run this command: 
 ```
@@ -875,7 +875,7 @@ result:
 ## ansible pack installation
 ## ansible pack configuration file  
 This pack doesnt use a configuration file. There is no configuration file for this pack in the directory /opt/stackstorm/configs/
-## list of available actions
+## list of available actions with the integration pack ansible
 ## Execute actions from ansible pack using ST2 cli
 
 # Executed actions
