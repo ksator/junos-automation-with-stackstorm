@@ -538,6 +538,7 @@ Optional Parameters:
         Default: 600
 ```
 ## Execute napalm actions using ST2 cli
+napalm.get_facts
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
 ....
@@ -601,6 +602,7 @@ result:
   stderr: ''
   stdout: ''
 ```
+napalm.get_bgp_neighbors_detail
 ```
 $ sudo st2 run napalm.get_bgp_neighbors_detail hostname=ex4300-9 neighbor=192.168.0.4
 ..
@@ -653,6 +655,7 @@ result:
   stderr: ''
   stdout: ''
 ```
+napalm.get_lldp_neighbors
 ```
 $ sudo st2 run napalm.get_lldp_neighbors hostname=ex4300-9
 ..
