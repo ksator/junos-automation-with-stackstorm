@@ -28,7 +28,8 @@ commit
 # StackStorm installation 
 
 ## All-in-one quick installation 
-To quickly install ST2 on ubuntu (single-box deployment for demo), run these commands: 
+Run these commands to execute a deployment script that quickly install ST2 on ubuntu (single-box deployment for demo).  
+It will create the st2 user st2admin with the password Ch@ngeMe. 
 ```
 sudo apt-get install curl
 curl -sSL https://stackstorm.com/packages/install.sh | bash -s -- --user=st2admin --password=Ch@ngeMe
