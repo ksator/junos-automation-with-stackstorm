@@ -601,6 +601,79 @@ result:
   stderr: ''
   stdout: ''
 ```
+```
+$ sudo st2 run napalm.get_bgp_neighbors_detail hostname=ex4300-9 neighbor=192.168.0.4
+..
+id: 5916200aa374d80940a8c68b
+status: succeeded
+parameters: 
+  hostname: ex4300-9
+  neighbor: 192.168.0.4
+result: 
+  exit_code: 0
+  result:
+    raw:
+      inet.0:
+        '110':
+        - accepted_prefix_count: 5
+          active_prefix_count: 2
+          advertised_prefix_count: 5
+          configured_holdtime: 90
+          configured_keepalive: 30
+          connection_state: Established
+          export_policy: bgp-out
+          flap_count: 0
+          holdtime: 90
+          import_policy: bgp-in
+          input_messages: 236802
+          input_updates: 3
+          keepalive: 30
+          last_event: RecvKeepAlive
+          local_address: 192.168.0.5
+          local_address_configured: false
+          local_as: 109
+          local_as_prepend: true
+          local_port: 61847
+          messages_queued_out: 0
+          multihop: false
+          multipath: true
+          output_messages: 236791
+          output_updates: 2
+          previous_connection_state: OpenConfirm
+          received_prefix_count: 5
+          remote_address: 192.168.0.4
+          remote_as: 110
+          remote_port: 179
+          remove_private_as: false
+          router_id: 192.179.0.73
+          routing_table: inet.0
+          suppress_4byte_as: false
+          suppressed_prefix_count: 0
+          up: true
+  stderr: ''
+  stdout: ''
+```
+```
+$ sudo st2 run napalm.get_lldp_neighbors hostname=ex4300-9
+..
+id: 59162094a374d80940a8c697
+status: succeeded
+parameters: 
+  hostname: ex4300-9
+result: 
+  exit_code: 0
+  result:
+    raw:
+      ge-0/0/0:
+      - hostname: ex4300-17
+        port: ex4300-9
+      ge-0/0/1:
+      - hostname: ex4300-18
+        port: ex4300-9
+  stderr: ''
+  stdout: ''
+```
+
 
 # ansible pack
 ## About Ansible
