@@ -537,7 +537,7 @@ Optional Parameters:
         Type: integer
         Default: 600
 ```
-## Pack usage with ST2 cli
+## Execute napalm actions using ST2 cli
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
 ....
@@ -601,6 +601,9 @@ result:
   stderr: ''
   stdout: ''
 ```
+## Executed actions
+
+### Get the list of the 50 most recent action executions
 ```
 $ sudo st2 execution list
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
@@ -616,6 +619,7 @@ $ sudo st2 execution list
 |                            |                  |              |                          | 18:15:18 UTC             | 18:15:25 UTC             |
 +----------------------------+------------------+--------------+--------------------------+--------------------------+--------------------------+
 ```
+### Get information about an executed action: 
 ```
 $ sudo st2 execution get 5915fa85a374d80940a8c67f
 id: 5915fa85a374d80940a8c67f
