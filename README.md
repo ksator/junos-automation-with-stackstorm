@@ -112,7 +112,7 @@ chatops  core  default  linux  packs  st2
 ```
 ## Discovering available Packs
 You can visit the integration packs hub https://exchange.stackstorm.org/  
-You can use the command **st2 pack search**. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
+You can use the command `st2 pack search`. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
 ```
 $ sudo st2 pack search mierdin
 +--------+--------------------------------------------+---------+-----------------------+
@@ -158,8 +158,8 @@ $ sudo st2 pack show napalm
 ```
 
 ## Pack configuration files
-They are located in /opt/stackstorm/configs/ directory.  
-A pack configuration file is a YAML file which contains pack configuration. It is named \<pack name>.yaml. 
+They are located in `/opt/stackstorm/configs/` directory.  
+A pack configuration file is a YAML file which contains pack configuration. It is named `<pack name>.yaml`. 
 Some packs require a pack configuration file (napalm) and others do not use a pack configuration file (ansible).  
 ```
 $ ls /opt/stackstorm/configs/
@@ -187,7 +187,7 @@ source code: https://github.com/StackStorm-Exchange/stackstorm-napalm
 All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed (in a virtualenv) when you will install the pack using st2 pack install.    
 
 ## napalm pack installation
-to get help with the st2 pack command, run this command: 
+to get help with the `st2 pack` command, run this command: 
 ```
 $ sudo st2 pack -h
 ```
@@ -273,12 +273,12 @@ $ sudo st2 pack get napalm
 |             | NAPALM library                                               |
 +-------------+--------------------------------------------------------------+ 
 ```
-Installed packs are placed under the directory /opt/stackstorm/packs: 
+Installed packs are placed under the directory `/opt/stackstorm/packs`: 
 ```
 ls /opt/stackstorm/packs/
 chatops  core  default  linux  napalm  packs  st2
 ```
-the repo https://github.com/StackStorm-Exchange/stackstorm-napalm  is cloned under the directory /opt/stackstorm/packs/napalm/ 
+the repo https://github.com/StackStorm-Exchange/stackstorm-napalm  is cloned under the directory `/opt/stackstorm/packs/napalm/` 
 ```
 $ ls -la /opt/stackstorm/packs/napalm/
 total 108
@@ -300,8 +300,8 @@ drwxrwxr-x 3 root st2packs  4096 mei 12 13:51 lint-configs
 drwxrwxr-x 2 root st2packs  4096 mei 12 13:51 rules
 ```
 
-A virtualenv is created for each pack under /opt/stackstorm/virtualenv.  
-Python dependencies are installed inside the virtualenv with pip -r requirements.txt.
+A virtualenv is created for each pack under `/opt/stackstorm/virtualenv`.  
+Python dependencies are installed inside the virtualenv with `pip -r requirements.txt`.
 ```
 $ more /opt/stackstorm/packs/napalm/requirements.txt 
 napalm-base
@@ -349,9 +349,9 @@ to remove this pack, run this command:
 $ sudo st2 pack remove napalm
 ```
 ## napalm pack configuration file  
-A pack configuration file (/opt/stackstorm/configs/napalm.yaml) is required for this pack.  
+A pack configuration file (`/opt/stackstorm/configs/napalm.yaml`) is required for this pack.  
 This is where you tell StackStorm about the network devices to use and the credentails for logging into the devices.  
-You need to create this napalm.yaml file.  
+You need to create this `napalm.yaml` file.  
 The file [napalm.yaml.example](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/napalm.yaml.example) at the root of the pack repository is an example. 
 ```
 $ more /opt/stackstorm/configs/napalm.yaml
@@ -830,7 +830,6 @@ result:
   stderr: ''
   stdout: ''
 ```
-
 napalm.ping
 ```
 $ sudo st2 run napalm.ping hostname=ex4300-9 destination=192.168.0.4 source=192.168.0.5 ttl=1
@@ -874,7 +873,7 @@ result:
 ## About the ansible pack
 ## ansible pack installation
 ## ansible pack configuration file  
-This pack doesnt use a configuration file. There is no configuration file for this pack in the directory /opt/stackstorm/configs/
+This pack doesnt use a configuration file. There is no configuration file for this pack in the directory `/opt/stackstorm/configs/`
 ## list of available actions with the integration pack ansible
 ## Execute actions from ansible pack using ST2 cli
 
