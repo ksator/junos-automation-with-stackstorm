@@ -1,5 +1,5 @@
 # About this repository
-How to automate Junos using StackStorm with the integration packs napalm and ansible.  
+How to automate Junos using StackStorm (with the integration packs napalm and ansible).  
 
 # About StackStorm
 
@@ -18,6 +18,7 @@ Slack team: https://stackstorm-community.slack.com
 
 ## Junos automation with StackStorm 
 StackStorm has network automation capabilities with the StackStorm integration packs napalm and ansible. So StackStorm can fire NAPALM or Ansible content based on events.  
+
 Junos can be automated with both NAPALM and Ansible.  
 You need to enable Netconf on the Junos devices:
 ```
@@ -29,7 +30,7 @@ commit
 
 ## All-in-one quick installation 
 Run these commands to execute a deployment script that quickly install StackStorm on ubuntu (single-box deployment for demo).  
-It will create the st2 user st2admin with the password Ch@ngeMe. 
+It will create the st2 user st2admin with the password Ch@ngeMe (you can change this).   
 ```
 sudo apt-get install curl
 curl -sSL https://stackstorm.com/packages/install.sh | bash -s -- --user=st2admin --password=Ch@ngeMe
@@ -61,14 +62,17 @@ Thanks for installing StackStorm! Come visit us in our Slack Channel
 and tell us how it's going. We'd love to hear from you!
 ```
 
-## Verify the StackStorm installation 
-### CLI
+## Verify the StackStorm installation  
+
+### Using StackStorm CLI
 ```
 $ st2 --version
 st2 2.2.1
 $ st2 --help
 ```
-### WebUI
+
+### Using StackStorm WebUI  
+
 StackStorm ships with an intuitive WebUI. You can access it at https://hostname.
 
 ## User 
@@ -87,13 +91,10 @@ ksator
 
 Integration packs extend StackStorm to integrate it with external systems (Ansible, NAPALM, Puppet ....)  
 
-## Integration packs hub
-StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
-StackStorm exchange: https://exchange.stackstorm.org/  
+## installed packs by default
 
-## installed packs
+### List of installed packs 
 
-### List of installed packs
 To list all installed pack, run the below command. So this is the list of packs installed by default: 
 ```
 $ sudo st2 pack list
@@ -118,6 +119,7 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
+  
 ### get information about an installed pack
 
 To get information about an installed pack, run this command:
@@ -149,6 +151,7 @@ $ sudo st2 pack get linux
 | description | Generic linux actions |
 +-------------+-----------------------+
 ```
+  
 ### Execute actions from a pack using StackStorm CLI
 To Execute actions from a pack using StackStorm CLI, run this command: 
 ```
@@ -204,6 +207,9 @@ result:
 "
   succeeded: true 
 ```
+## Integration packs hub
+StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
+StackStorm exchange: https://exchange.stackstorm.org/  
 
 ## Discovering available packs in StackStorm exchange
 You can visit the integration packs hub https://exchange.stackstorm.org/  
