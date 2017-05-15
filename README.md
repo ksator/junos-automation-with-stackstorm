@@ -290,7 +290,10 @@ $
 ## About the napalm pack
 StackStorm pack for working with network devices using the NAPALM python library.  
 source code: https://github.com/StackStorm-Exchange/stackstorm-napalm  
-All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt). These python libraries will be installed (in a virtualenv) when you will install the pack using st2 pack install.    
+It is available on [StackStorm Exchange](https://exchange.stackstorm.org/)
+
+All Python dependencies are included in [requirements.txt](https://github.com/StackStorm-Exchange/stackstorm-napalm/blob/master/requirements.txt).  
+These python libraries will be installed (in a virtualenv) when you will install the pack using st2 pack install.    
 
 ## napalm pack installation
 to get help with the `st2 pack` command, run this command: 
@@ -498,7 +501,7 @@ you can also use of this command:
 ```
 sudo st2 pack register napalm
 ```
-## list of available actions with the integration pack napalm
+## Available actions with the integration pack napalm
 
 To get the list of available actions with the integration pack napalm, run this command: 
 ```
