@@ -153,7 +153,9 @@ $ sudo st2 pack get linux
 ```
   
 ### Execute actions from a pack using StackStorm CLI
-To Execute actions from a pack using StackStorm CLI, run this command: 
+
+To het help with an action, run this command: 
+
 ```
 $ sudo st2 run core.local -h
 
@@ -185,6 +187,8 @@ Optional Parameters:
         Type: integer
         Default: 60
 ```
+
+To Execute an action, run this command: 
 ```
 $ sudo st2 run core.local cmd="ifconfig eth0"
 .
@@ -207,6 +211,7 @@ result:
 "
   succeeded: true 
 ```
+
 ## Integration packs hub
 StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
 StackStorm exchange: https://exchange.stackstorm.org/  
@@ -539,7 +544,7 @@ $ sudo st2 action list -p napalm
 | napalm.traceroute                    | napalm | Run a traceroute from a network device using NAPALM.     |
 +--------------------------------------+--------+----------------------------------------------------------+
 ```
-To get the details about one action, run one of the two below commands (I prefer the second one):  
+To get details about an action, run one of this command:  
 ```
 $ sudo st2 action get napalm.get_facts
 +-------------+--------------------------------------------------------------+
@@ -599,6 +604,7 @@ $ sudo st2 action get napalm.get_facts
 | tags        |                                                              |
 +-------------+--------------------------------------------------------------+ 
 ```
+To get help about an action, run this command:  
 ```
 $ sudo st2 run napalm.get_facts -h
 
@@ -643,6 +649,7 @@ Optional Parameters:
 ```
 ## Execute actions from napalm pack using StackStorm CLI
 
+### napalm.get_facts
 Get various facts (Version, Serial Number,  Model, etc.) from a device:
 ```
 $ sudo st2 run napalm.get_facts hostname=ex4300-17
@@ -707,6 +714,8 @@ result:
   stderr: ''
   stdout: ''
 ```
+
+### napalm.get_bgp_neighbors_detail
 Get a detailed BGP neighbor from a device: 
 ```
 $ sudo st2 run napalm.get_bgp_neighbors_detail hostname=ex4300-9 neighbor=192.168.0.4
@@ -760,6 +769,8 @@ result:
   stderr: ''
   stdout: ''
 ```
+
+### napalm.get_lldp_neighbors
 Get the LLDP Neighbors from a device:
 ```
 $ sudo st2 run napalm.get_lldp_neighbors hostname=ex4300-9
@@ -781,6 +792,8 @@ result:
   stderr: ''
   stdout: ''
 ```
+
+### napalm.get_interfaces 
 Get interfaces from a device:
 ```
 $ sudo st2 run napalm.get_interfaces -h
@@ -933,6 +946,8 @@ result:
   stderr: ''
   stdout: ''
 ```
+
+### napalm.ping
 Run a ping from a network device:
 ```
 $ sudo st2 run napalm.ping hostname=ex4300-9 destination=192.168.0.4 source=192.168.0.5 ttl=1
