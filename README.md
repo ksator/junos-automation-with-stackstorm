@@ -4,7 +4,7 @@ How to automate Junos using StackStorm with the integration packs napalm and ans
 # About StackStorm
 
 ## What is StackStorm
-StackStorm is event-driven automation: it reacts to events, it doesnt require an human input.   
+StackStorm is event-driven automation: it reacts to events, it doesnt require a human input.   
 
 https://keepingitclassless.net/2016/12/introduction-to-stackstorm/ (Matt Oswalt)  
 https://medium.com/netflix-techblog/introducing-winston-event-driven-diagnostic-and-remediation-platform-46ce39aa81cc (Netflix)  
@@ -62,15 +62,21 @@ and tell us how it's going. We'd love to hear from you!
 ```
 
 ## Verify the StackStorm installation 
+### CLI
 ```
 $ st2 --version
 st2 2.2.1
 $ st2 --help
 ```
+### WebUI
+StackStorm ships with an intuitive WebUI. You can access it at https://hostname.
+
 ## User 
 ```
 $ st2 whoami 
 Currently logged in as st2admin
+```
+```
 $ whoami
 ksator
 $ echo $USER
@@ -82,11 +88,11 @@ ksator
 Integration packs extend StackStorm to integrate it with external systems (Ansible, NAPALM, Puppet ....)  
 
 ## Integration packs hub
-StackStorm exchange: https://exchange.stackstorm.org/  
 StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
+StackStorm exchange: https://exchange.stackstorm.org/  
 
 ## List of installed packs
-to list all installed pack, run the below command. So this is the list of packs installed by default: 
+To list all installed pack, run the below command. So this is the list of packs installed by default: 
 ```
 $ sudo st2 pack list
 +---------+---------+------------------------------------+---------+------------------+
@@ -110,7 +116,7 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
-## Discovering available packs
+## Discovering available packs in StackStorm exchange
 You can visit the integration packs hub https://exchange.stackstorm.org/  
 You can use the command `st2 pack search`. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
 ```
