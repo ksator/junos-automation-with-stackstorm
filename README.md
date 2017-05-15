@@ -1,8 +1,8 @@
 # What is StackStorm
-StackStorm is event-driven automation:
+StackStorm is event-driven automation.
 
 # What to find on this repo:   
-How to automate Junos using StackStorm (with the integration packs napalm and ansible)
+How to automate Junos using StackStorm (with the integration packs napalm and ansible).
 
 # Doc: 
 Please visit [wiki](https://github.com/ksator/junos-automation-with-stackstorm/wiki) to get all the details regarding this project.  
