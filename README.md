@@ -91,7 +91,9 @@ Integration packs extend StackStorm to integrate it with external systems (Ansib
 StackStorm Exchange is a collection of packs submitted and maintained by the StackStorm community.  
 StackStorm exchange: https://exchange.stackstorm.org/  
 
-## List of installed packs
+## installed packs
+
+### List of installed packs
 To list all installed pack, run the below command. So this is the list of packs installed by default: 
 ```
 $ sudo st2 pack list
@@ -116,6 +118,93 @@ Installed packs are placed under /opt/stackstorm/packs directory:
 $ ls /opt/stackstorm/packs/
 chatops  core  default  linux  packs  st2
 ```
+### get information about an installed pack
+
+To get information about an installed pack, run this command:
+```
+$ sudo st2 pack get linux
++-------------+-----------------------+
+| Property    | Value                 |
++-------------+-----------------------+
+| name        | linux                 |
+| version     | 0.1.0                 |
+| author      | st2-dev               |
+| email       | info@stackstorm.com   |
+| keywords    | [                     |
+|             |     "linux",          |
+|             |     "nmap",           |
+|             |     "lsof",           |
+|             |     "traceroute",     |
+|             |     "loadavg",        |
+|             |     "cp",             |
+|             |     "scp",            |
+|             |     "dig",            |
+|             |     "netstat",        |
+|             |     "rsync",          |
+|             |     "vmstat",         |
+|             |     "open ports",     |
+|             |     "processes",      |
+|             |     "ps"              |
+|             | ]                     |
+| description | Generic linux actions |
++-------------+-----------------------+
+```
+### Execute actions from a pack using StackStorm CLI
+To Execute actions from a pack using StackStorm CLI, run this command: 
+```
+$ sudo st2 run core.local -h
+
+Action that executes an arbitrary Linux command on the localhost.
+
+Required Parameters:
+    cmd
+        Arbitrary Linux command to be executed on the local host.
+        Type: string
+
+Optional Parameters:
+    cwd
+        Working directory where the command will be executed in
+        Type: string
+
+    env
+        Environment variables which will be available to the command(e.g.
+        key1=val1,key2=val2)
+        Type: object
+
+    kwarg_op
+        Operator to use in front of keyword args i.e. "--" or "-".
+        Type: string
+        Default: --
+
+    timeout
+        Action timeout in seconds. Action will get killed if it doesn't finish
+        in timeout seconds.
+        Type: integer
+        Default: 60
+```
+```
+$ sudo st2 run core.local cmd="ifconfig eth0"
+.
+id: 59198b1fa374d86e74b68208
+status: succeeded
+parameters: 
+  cmd: ifconfig eth0
+result: 
+  failed: false
+  return_code: 0
+  stderr: ''
+  stdout: "eth0      Link encap:Ethernet  HWaddr 00:0c:29:77:30:c4  
+          inet addr:192.168.233.138  Bcast:192.168.233.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fe77:30c4/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:68666 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:21381 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:32221313 (32.2 MB)  TX bytes:6410570 (6.4 MB)
+"
+  succeeded: true 
+```
+
 ## Discovering available packs in StackStorm exchange
 You can visit the integration packs hub https://exchange.stackstorm.org/  
 You can use the command `st2 pack search`. This command searches packs through packs properties: name, description (use quotes for multi-word search), keywords, and even author:
